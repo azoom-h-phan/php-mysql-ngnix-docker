@@ -19,6 +19,7 @@ action "gcloud login to special user" {
 
 action "Publish" {
   needs = ["gcloud login to special user"]
-  uses = "actions/action-builder/docker@master"
+  uses = "./cli"
   runs = "cd php-mysql-ngnix-docker && git pull"
+  secrets = ["GCLOUD_AUTH", "GITHUB_TOKEN"]
 }
