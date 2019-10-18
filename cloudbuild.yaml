@@ -5,4 +5,4 @@ steps:
     args:
       - '-c'
       - |
-        gcloud compute ssh h_phan@test-github-actionn --zone asia-northeast1-a --command="cd /home/h_phan/php-mysql-ngnix-docker && sudo -u h_phan git fetch --tag && sudo -u h_phan git reset --hard $TAG_NAME"
+        gcloud compute ssh h_phan@test-github-actionn --zone asia-northeast1-a --command="cd /home/h_phan/php-mysql-ngnix-docker && whoami && git fetch --tag && git reset --hard $TAG_NAME"
