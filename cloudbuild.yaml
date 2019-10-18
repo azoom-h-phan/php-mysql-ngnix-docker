@@ -1,0 +1,8 @@
+steps:
+  - id: deploy
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: bash
+    args:
+      - '-c'
+      - |
+        gcloud compute ssh h_phan@test-github-actionn --zone asia-northeast1-a --command="cd /home/h_phan/php-mysql-ngnix-docker && sudo -u h_phan git fetch --tag && sudo -u h_phan git reset --hard $TAG_NAME"
